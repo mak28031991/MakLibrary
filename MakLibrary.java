@@ -1,6 +1,15 @@
 
 public class MakLibrary {
 
+	public static boolean IsNegative(int num)
+	{
+		return ( num!=0 &&(num>> (Integer.SIZE-1))==-1 );
+	}
+	public static boolean IsNegative(long num)
+	{
+		return ( num!=0 &&(num>> (Long.SIZE-1))==-1 );
+	}
+
 	static boolean IsIthBitSet (int N, int i)
 	{
 		int temp =N & (1 << i);
