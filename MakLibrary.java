@@ -1,6 +1,20 @@
 
 public class MakLibrary {
 
+	public static boolean IntHaveDiffSign(int num1, int num2)
+	{
+		return ((num1^num2) <0);
+	}
+	public static int AbsValue(int num)
+	{
+		int mask=(num>> (Integer.SIZE-1));
+		return (num+mask)^mask;
+	}
+	public static long AbsValue(long num)
+	{
+		long mask=(num>> (Long.SIZE-1));
+		return (num+mask)^mask;
+	}
 	public static boolean IsNegative(int num)
 	{
 		return ( num!=0 &&(num>> (Integer.SIZE-1))==-1 );
