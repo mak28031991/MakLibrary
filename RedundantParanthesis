@@ -1,0 +1,38 @@
+// import java.util.Stack;
+
+static boolean RedundantParanthesis(String str)
+	{
+		Stack<Character> stack = new Stack<Character>();
+		char []arr= str.toCharArray();
+		int  prevwas=0;
+		for (char x: arr)
+		{
+			if(x==')')
+			{
+				if(stack.peek()=='(' && prevwas==1)
+				{
+					return true;
+					
+				}
+				else
+				{
+					while(stack.peek()!='(')
+					{
+						stack.pop();	
+					}
+					stack.pop();
+					prevwas=1;
+				}
+				
+			}
+			else 
+			{
+			//	(( a + b ) + (( c + d )))
+				stack.push(x);
+			}
+			
+			
+			
+		}
+		return false;
+	}
