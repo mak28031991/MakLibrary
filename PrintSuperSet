@@ -1,0 +1,16 @@
+static void  PrintSuperSet(int arr[])
+	{
+		int n=arr.length;
+		int m = (int)Math.pow(2, n);
+		for(int i=0;i<m;i++)
+		{
+			for(int j=0;j<arr.length;j++)
+			{
+				if((i & (1<<j))!=0)
+				{
+					System.out.print(arr[j]+",");
+				}
+			}
+			
+		}
+	}
